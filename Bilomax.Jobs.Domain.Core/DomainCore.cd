@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Hdwih.Jobs.Domain.Core.Address">
+    <Position X="12.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAACAAAAIIAAAAAAAAAIAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Address.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.Country">
+    <Position X="15" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.Language">
+    <Position X="13.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Language.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.Person">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAEAAAACAAACEAAAQAAAAAAAQAIAAAAAAAgAAAAg=</HashCode>
+      <FileName>Person.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Gender" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="CurrentAddresses" />
+      <Property Name="CurrentPhoneNumbers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.PersonResume">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAACAAACAGAAQEAAAAAIwAAAAAAAAAgAEgCg=</HashCode>
+      <FileName>Resume\PersonResume.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="LanguagesSpoken" />
+      <Property Name="References" />
+      <Property Name="EducationHistory" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.EmploymentPosition">
+    <Position X="7.25" Y="2" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAACAAgAARAIAAAggAAiAAAAAAACAAEAAAAA=</HashCode>
+      <FileName>Resume\EmploymentPosition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AwardsReceived" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.PositionDuty">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAACAAAAAAAAA=</HashCode>
+      <FileName>Resume\PositionDuty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.Reference">
+    <Position X="11" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resume\Reference.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RelationshipType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.PhoneNumber">
+    <Position X="3.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAACAAAAAAEAABAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resume\PhoneNumber.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PhoneType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.PersonEducation">
+    <Position X="10.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIAAAQAAAACEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resume\PersonEducation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Institution" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="AwardsReceived" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.EducationInstitutation">
+    <Position X="14.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Resume\EducationInstitutation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.Award">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAhAEAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resume\Award.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.MailingAddress">
+    <Position X="12" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MailingAddress.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.OrganizationContact">
+    <Position X="9.75" Y="12.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrganizationContact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.HdwihRecruit">
+    <Position X="6.75" Y="12.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IIABAySAAAAABAAAAAAAAAgBAAABAAAQAAgAAQAAABA=</HashCode>
+      <FileName>HdwihRecruit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.GenericUser">
+    <Position X="7.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenericUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hdwih.Jobs.Domain.Core.UserAccountProfile">
+    <Position X="4" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAEEEAAAEAAAgAAQAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>UserAccount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Hdwih.Jobs.Domain.Core.IResumeAttribute" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Resume\IResumeAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Hdwih.Jobs.Domain.Core.Gender">
+    <Position X="5.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAABA=</HashCode>
+      <FileName>Gender.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Hdwih.Jobs.Domain.Core.PhoneType">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAIAAAAAAAAAAAAAAAAABAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>PhoneType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Hdwih.Jobs.Domain.Core.RelationShipType" Collapsed="true">
+    <Position X="14" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAQAIAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>RelationShipType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

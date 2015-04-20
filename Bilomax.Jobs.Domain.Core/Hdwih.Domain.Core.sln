@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdwih.Domain.Core", "Hdwih.Domain.Core.csproj", "{814FDA81-4F26-41D5-9CA4-11DF20ED8D99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bilomax.Generic.Infrastructure", "..\Bilomax.Jobs.Infrastructure\Bilomax.Generic.Infrastructure.csproj", "{5A9AD473-5D70-4958-A00C-0FD7ED6E2903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdwih.Jobs.Repository.EntityFramework", "..\Hdwih.Jobs.Repository.EntityFramework\Hdwih.Jobs.Repository.EntityFramework.csproj", "{97469FEB-9C17-4B38-964C-FCF70A1CAFBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdwih.Domain.Controllers", "..\Bilomax.Jobs.Domain.Controllers\Hdwih.Domain.Controllers.csproj", "{C4D3D2A8-F8E1-4E25-BF4D-184DF5025623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdwih.Jobs.ApplicationService", "..\Bilomax.Jobs.ApplicationService\Hdwih.Jobs.ApplicationService.csproj", "{E29B056A-0661-46A6-B781-494CBF6624FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdwih.Jobs.UI.Web.MVC", "..\Bilomax.Jobs.UI.Web.MVC\Hdwih.Jobs.UI.Web.MVC.csproj", "{03126B25-E76A-4229-87F1-623BFE0F724D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hdwih.Services.Cache", "..\Bilomax.Jobs.Services.Cache\Hdwih.Services.Cache.csproj", "{C61D8AB2-750B-4F06-8DF5-8C50452453D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{1110DCB1-868E-40A5-9793-14F5CE52565B}"
+	ProjectSection(SolutionItems) = preProject
+		..\Lib1\gfdl.txt = ..\Lib1\gfdl.txt
+		..\Lib1\HowInstall.txt = ..\Lib1\HowInstall.txt
+		..\Lib1\readme.html = ..\Lib1\readme.html
+		..\Lib1\releasenotes.txt = ..\Lib1\releasenotes.txt
+		..\Lib1\Rhino.Mocks.dll = ..\Lib1\Rhino.Mocks.dll
+		..\Lib1\StructureMap.AutoMocking.dll = ..\Lib1\StructureMap.AutoMocking.dll
+		..\Lib1\StructureMap.AutoMocking.xml = ..\Lib1\StructureMap.AutoMocking.xml
+		..\Lib1\StructureMap.chm = ..\Lib1\StructureMap.chm
+		..\Lib1\StructureMap.dll = ..\Lib1\StructureMap.dll
+		..\Lib1\StructureMap.xml = ..\Lib1\StructureMap.xml
+		..\Lib1\StructureMapDoctor.exe = ..\Lib1\StructureMapDoctor.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{7ADDF67B-AC60-4038-9C5D-7B46E757B50C}"
+	ProjectSection(SolutionItems) = preProject
+		..\packages\repositories.config = ..\packages\repositories.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{814FDA81-4F26-41D5-9CA4-11DF20ED8D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{814FDA81-4F26-41D5-9CA4-11DF20ED8D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{814FDA81-4F26-41D5-9CA4-11DF20ED8D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{814FDA81-4F26-41D5-9CA4-11DF20ED8D99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A9AD473-5D70-4958-A00C-0FD7ED6E2903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A9AD473-5D70-4958-A00C-0FD7ED6E2903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A9AD473-5D70-4958-A00C-0FD7ED6E2903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A9AD473-5D70-4958-A00C-0FD7ED6E2903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97469FEB-9C17-4B38-964C-FCF70A1CAFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97469FEB-9C17-4B38-964C-FCF70A1CAFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97469FEB-9C17-4B38-964C-FCF70A1CAFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97469FEB-9C17-4B38-964C-FCF70A1CAFBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D3D2A8-F8E1-4E25-BF4D-184DF5025623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D3D2A8-F8E1-4E25-BF4D-184DF5025623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D3D2A8-F8E1-4E25-BF4D-184DF5025623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D3D2A8-F8E1-4E25-BF4D-184DF5025623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29B056A-0661-46A6-B781-494CBF6624FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29B056A-0661-46A6-B781-494CBF6624FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29B056A-0661-46A6-B781-494CBF6624FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29B056A-0661-46A6-B781-494CBF6624FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03126B25-E76A-4229-87F1-623BFE0F724D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03126B25-E76A-4229-87F1-623BFE0F724D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03126B25-E76A-4229-87F1-623BFE0F724D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03126B25-E76A-4229-87F1-623BFE0F724D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

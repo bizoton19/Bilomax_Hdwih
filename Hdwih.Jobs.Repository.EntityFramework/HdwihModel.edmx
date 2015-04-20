@@ -1,0 +1,1065 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Hdwih_Jobs_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EducationInstituationId" Type="bigint" />
+          <Property Name="AddressName" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="AddressType" Type="smallint" Nullable="false" />
+          <Property Name="StreetAddress" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTimeStamp" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateReceived" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PositionId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EducationInstitution">
+          <Key>
+            <PropertyRef Name="EducationInstitutionId" />
+          </Key>
+          <Property Name="EducationInstitutionId" Type="bigint" Nullable="false" />
+          <Property Name="InstitutionName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmploymentPosition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResumeId" Type="bigint" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SupervisorPhone" Type="varchar" MaxLength="14" />
+          <Property Name="SupervisorName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="EndDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="NumberOWeeklyHours" Type="smallint" Nullable="false" />
+          <Property Name="IsVolunteerPosition" Type="bit" Nullable="false" />
+          <Property Name="IsInPresentPosition" Type="bit" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobPosting">
+          <Key>
+            <PropertyRef Name="JobPostingId" />
+          </Key>
+          <Property Name="JobPostingId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PostingDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PostingTitle" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LanguageSpoken">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="PersonResumeId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="25" />
+          <Property Name="Gender" Type="smallint" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonAddress">
+          <Key>
+            <PropertyRef Name="PersonId" />
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="PersonId" Type="bigint" Nullable="false" />
+          <Property Name="AddressId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonEducation">
+          <Key>
+            <PropertyRef Name="PersonResumeId" />
+            <PropertyRef Name="EducationInstitutionId" />
+          </Key>
+          <Property Name="PersonResumeId" Type="bigint" Nullable="false" />
+          <Property Name="EducationInstitutionId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonReference">
+          <Key>
+            <PropertyRef Name="PersonResumeId" />
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonResumeId" Type="bigint" Nullable="false" />
+          <Property Name="PersonId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonResume">
+          <Key>
+            <PropertyRef Name="PersonResumeId" />
+          </Key>
+          <Property Name="PersonResumeId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PersonId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="PhoneNumberId" />
+          </Key>
+          <Property Name="PhoneNumberId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaCode" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CountryCode" Type="smallint" Nullable="false" />
+          <Property Name="Number" Type="bigint" Nullable="false" />
+          <Property Name="PhoneType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="PersonId" Type="bigint" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PositionDuty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PositionId" Type="bigint" Nullable="false" />
+          <Property Name="DutyDescrption" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SkillOrSpeciality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonResumeId" Type="bigint" Nullable="false" />
+          <Property Name="SkillOrSpecialtyDescription" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="InsertDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastUpdateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Address_EducationInstitution">
+          <End Role="EducationInstitution" Type="Self.EducationInstitution" Multiplicity="0..1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducationInstitution">
+              <PropertyRef Name="EducationInstitutionId" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="EducationInstituationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LanguageSpoken_PersonResume">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="LanguageSpoken" Type="Self.LanguageSpoken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="LanguageSpoken">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonAddress_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="PersonAddress" Type="Self.PersonAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="PersonAddress">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonAddress_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonAddress" Type="Self.PersonAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonAddress">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonEducation_EducationInstitution">
+          <End Role="EducationInstitution" Type="Self.EducationInstitution" Multiplicity="1" />
+          <End Role="PersonEducation" Type="Self.PersonEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducationInstitution">
+              <PropertyRef Name="EducationInstitutionId" />
+            </Principal>
+            <Dependent Role="PersonEducation">
+              <PropertyRef Name="EducationInstitutionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonReference_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonReference" Type="Self.PersonReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonReference">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonReference_PersonResume">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="PersonReference" Type="Self.PersonReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="PersonReference">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonHasOneOrMorePhoneNumbers">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonHasOneOrMoreResumes">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonResume">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonMayHaveOneOrMoreEducationBackground">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="PersonEducation" Type="Self.PersonEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="PersonEducation">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition">
+          <End Role="EmploymentPosition" Type="Self.EmploymentPosition" Multiplicity="1" />
+          <End Role="Award" Type="Self.Award" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmploymentPosition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Award">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="SkillOrSpeciality" Type="Self.SkillOrSpeciality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="SkillOrSpeciality">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PositionHasManyDuties">
+          <End Role="EmploymentPosition" Type="Self.EmploymentPosition" Multiplicity="1" />
+          <End Role="PositionDuty" Type="Self.PositionDuty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmploymentPosition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PositionDuty">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ResumeIncludesOneOreMorePositions">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="EmploymentPosition" Type="Self.EmploymentPosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="EmploymentPosition">
+              <PropertyRef Name="ResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Hdwih_Jobs_ModelStoreContainer">
+          <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducationInstitution" EntityType="Self.EducationInstitution" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmploymentPosition" EntityType="Self.EmploymentPosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobPosting" EntityType="Self.JobPosting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LanguageSpoken" EntityType="Self.LanguageSpoken" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonAddress" EntityType="Self.PersonAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonEducation" EntityType="Self.PersonEducation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonReference" EntityType="Self.PersonReference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonResume" EntityType="Self.PersonResume" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhoneNumber" EntityType="Self.PhoneNumber" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PositionDuty" EntityType="Self.PositionDuty" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SkillOrSpeciality" EntityType="Self.SkillOrSpeciality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Address_EducationInstitution" Association="Self.FK_Address_EducationInstitution">
+            <End Role="EducationInstitution" EntitySet="EducationInstitution" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LanguageSpoken_PersonResume" Association="Self.FK_LanguageSpoken_PersonResume">
+            <End Role="PersonResume" EntitySet="PersonResume" />
+            <End Role="LanguageSpoken" EntitySet="LanguageSpoken" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonAddress_Address" Association="Self.FK_PersonAddress_Address">
+            <End Role="Address" EntitySet="Address" />
+            <End Role="PersonAddress" EntitySet="PersonAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonAddress_Person" Association="Self.FK_PersonAddress_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonAddress" EntitySet="PersonAddress" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonEducation_EducationInstitution" Association="Self.FK_PersonEducation_EducationInstitution">
+            <End Role="EducationInstitution" EntitySet="EducationInstitution" />
+            <End Role="PersonEducation" EntitySet="PersonEducation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonReference_Person" Association="Self.FK_PersonReference_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonReference" EntitySet="PersonReference" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonReference_PersonResume" Association="Self.FK_PersonReference_PersonResume">
+            <End Role="PersonResume" EntitySet="PersonResume" />
+            <End Role="PersonReference" EntitySet="PersonReference" />
+          </AssociationSet>
+          <AssociationSet Name="PersonHasOneOrMorePhoneNumbers" Association="Self.PersonHasOneOrMorePhoneNumbers">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumber" />
+          </AssociationSet>
+          <AssociationSet Name="PersonHasOneOrMoreResumes" Association="Self.PersonHasOneOrMoreResumes">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonResume" EntitySet="PersonResume" />
+          </AssociationSet>
+          <AssociationSet Name="PersonMayHaveOneOrMoreEducationBackground" Association="Self.PersonMayHaveOneOrMoreEducationBackground">
+            <End Role="PersonResume" EntitySet="PersonResume" />
+            <End Role="PersonEducation" EntitySet="PersonEducation" />
+          </AssociationSet>
+          <AssociationSet Name="PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition" Association="Self.PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition">
+            <End Role="EmploymentPosition" EntitySet="EmploymentPosition" />
+            <End Role="Award" EntitySet="Award" />
+          </AssociationSet>
+          <AssociationSet Name="PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills" Association="Self.PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills">
+            <End Role="PersonResume" EntitySet="PersonResume" />
+            <End Role="SkillOrSpeciality" EntitySet="SkillOrSpeciality" />
+          </AssociationSet>
+          <AssociationSet Name="PositionHasManyDuties" Association="Self.PositionHasManyDuties">
+            <End Role="EmploymentPosition" EntitySet="EmploymentPosition" />
+            <End Role="PositionDuty" EntitySet="PositionDuty" />
+          </AssociationSet>
+          <AssociationSet Name="ResumeIncludesOneOreMorePositions" Association="Self.ResumeIncludesOneOreMorePositions">
+            <End Role="PersonResume" EntitySet="PersonResume" />
+            <End Role="EmploymentPosition" EntitySet="EmploymentPosition" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Hdwih_Jobs_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EducationInstituationId" Type="Int64" />
+          <Property Name="AddressName" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AddressType" Type="Int16" Nullable="false" />
+          <Property Name="StreetAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTimeStamp" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="EducationInstitution" Relationship="Self.FK_Address_EducationInstitution" FromRole="Address" ToRole="EducationInstitution" />
+          <NavigationProperty Name="PersonAddresses" Relationship="Self.FK_PersonAddress_Address" FromRole="Address" ToRole="PersonAddress" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateReceived" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="PositionId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="EmploymentPosition" Relationship="Self.PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition" FromRole="Award" ToRole="EmploymentPosition" />
+        </EntityType>
+        <EntityType Name="EducationInstitution">
+          <Key>
+            <PropertyRef Name="EducationInstitutionId" />
+          </Key>
+          <Property Name="EducationInstitutionId" Type="Int64" Nullable="false" />
+          <Property Name="InstitutionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Addresses" Relationship="Self.FK_Address_EducationInstitution" FromRole="EducationInstitution" ToRole="Address" />
+          <NavigationProperty Name="PersonEducations" Relationship="Self.FK_PersonEducation_EducationInstitution" FromRole="EducationInstitution" ToRole="PersonEducation" />
+        </EntityType>
+        <EntityType Name="EmploymentPosition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResumeId" Type="Int64" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SupervisorPhone" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="SupervisorName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="NumberOWeeklyHours" Type="Int16" Nullable="false" />
+          <Property Name="IsVolunteerPosition" Type="Boolean" Nullable="false" />
+          <Property Name="IsInPresentPosition" Type="Boolean" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Awards" Relationship="Self.PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition" FromRole="EmploymentPosition" ToRole="Award" />
+          <NavigationProperty Name="PositionDuties" Relationship="Self.PositionHasManyDuties" FromRole="EmploymentPosition" ToRole="PositionDuty" />
+          <NavigationProperty Name="PersonResume" Relationship="Self.ResumeIncludesOneOreMorePositions" FromRole="EmploymentPosition" ToRole="PersonResume" />
+        </EntityType>
+        <EntityType Name="JobPosting">
+          <Key>
+            <PropertyRef Name="JobPostingId" />
+          </Key>
+          <Property Name="JobPostingId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PostingDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="PostingTitle" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="LanguageSpoken">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="PersonResumeId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="PersonResume" Relationship="Self.FK_LanguageSpoken_PersonResume" FromRole="LanguageSpoken" ToRole="PersonResume" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="Int16" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="PersonAddresses" Relationship="Self.FK_PersonAddress_Person" FromRole="Person" ToRole="PersonAddress" />
+          <NavigationProperty Name="PersonReferences" Relationship="Self.FK_PersonReference_Person" FromRole="Person" ToRole="PersonReference" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="Self.PersonHasOneOrMorePhoneNumbers" FromRole="Person" ToRole="PhoneNumber" />
+          <NavigationProperty Name="PersonResumes" Relationship="Self.PersonHasOneOrMoreResumes" FromRole="Person" ToRole="PersonResume" />
+        </EntityType>
+        <EntityType Name="PersonAddress">
+          <Key>
+            <PropertyRef Name="PersonId" />
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="PersonId" Type="Int64" Nullable="false" />
+          <Property Name="AddressId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Address" Relationship="Self.FK_PersonAddress_Address" FromRole="PersonAddress" ToRole="Address" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersonAddress_Person" FromRole="PersonAddress" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="PersonEducation">
+          <Key>
+            <PropertyRef Name="PersonResumeId" />
+            <PropertyRef Name="EducationInstitutionId" />
+          </Key>
+          <Property Name="PersonResumeId" Type="Int64" Nullable="false" />
+          <Property Name="EducationInstitutionId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="EducationInstitution" Relationship="Self.FK_PersonEducation_EducationInstitution" FromRole="PersonEducation" ToRole="EducationInstitution" />
+          <NavigationProperty Name="PersonResume" Relationship="Self.PersonMayHaveOneOrMoreEducationBackground" FromRole="PersonEducation" ToRole="PersonResume" />
+        </EntityType>
+        <EntityType Name="PersonReference">
+          <Key>
+            <PropertyRef Name="PersonResumeId" />
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonResumeId" Type="Int64" Nullable="false" />
+          <Property Name="PersonId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersonReference_Person" FromRole="PersonReference" ToRole="Person" />
+          <NavigationProperty Name="PersonResume" Relationship="Self.FK_PersonReference_PersonResume" FromRole="PersonReference" ToRole="PersonResume" />
+        </EntityType>
+        <EntityType Name="PersonResume">
+          <Key>
+            <PropertyRef Name="PersonResumeId" />
+          </Key>
+          <Property Name="PersonResumeId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PersonId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="EmploymentPositions" Relationship="Self.ResumeIncludesOneOreMorePositions" FromRole="PersonResume" ToRole="EmploymentPosition" />
+          <NavigationProperty Name="LanguageSpokens" Relationship="Self.FK_LanguageSpoken_PersonResume" FromRole="PersonResume" ToRole="LanguageSpoken" />
+          <NavigationProperty Name="Person" Relationship="Self.PersonHasOneOrMoreResumes" FromRole="PersonResume" ToRole="Person" />
+          <NavigationProperty Name="PersonEducations" Relationship="Self.PersonMayHaveOneOrMoreEducationBackground" FromRole="PersonResume" ToRole="PersonEducation" />
+          <NavigationProperty Name="PersonReferences" Relationship="Self.FK_PersonReference_PersonResume" FromRole="PersonResume" ToRole="PersonReference" />
+          <NavigationProperty Name="SkillOrSpecialities" Relationship="Self.PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills" FromRole="PersonResume" ToRole="SkillOrSpeciality" />
+        </EntityType>
+        <EntityType Name="PhoneNumber">
+          <Key>
+            <PropertyRef Name="PhoneNumberId" />
+          </Key>
+          <Property Name="PhoneNumberId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CountryCode" Type="Int16" Nullable="false" />
+          <Property Name="Number" Type="Int64" Nullable="false" />
+          <Property Name="PhoneType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PersonId" Type="Int64" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Person" Relationship="Self.PersonHasOneOrMorePhoneNumbers" FromRole="PhoneNumber" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="PositionDuty">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PositionId" Type="Int64" Nullable="false" />
+          <Property Name="DutyDescrption" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="EmploymentPosition" Relationship="Self.PositionHasManyDuties" FromRole="PositionDuty" ToRole="EmploymentPosition" />
+        </EntityType>
+        <EntityType Name="SkillOrSpeciality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonResumeId" Type="Int64" Nullable="false" />
+          <Property Name="SkillOrSpecialtyDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InsertDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastUpdateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="PersonResume" Relationship="Self.PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills" FromRole="SkillOrSpeciality" ToRole="PersonResume" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Address_EducationInstitution">
+          <End Role="EducationInstitution" Type="Self.EducationInstitution" Multiplicity="0..1" />
+          <End Role="Address" Type="Self.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducationInstitution">
+              <PropertyRef Name="EducationInstitutionId" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="EducationInstituationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonAddress_Address">
+          <End Role="Address" Type="Self.Address" Multiplicity="1" />
+          <End Role="PersonAddress" Type="Self.PersonAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="PersonAddress">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition">
+          <End Role="EmploymentPosition" Type="Self.EmploymentPosition" Multiplicity="1" />
+          <End Role="Award" Type="Self.Award" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmploymentPosition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Award">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonEducation_EducationInstitution">
+          <End Role="EducationInstitution" Type="Self.EducationInstitution" Multiplicity="1" />
+          <End Role="PersonEducation" Type="Self.PersonEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducationInstitution">
+              <PropertyRef Name="EducationInstitutionId" />
+            </Principal>
+            <Dependent Role="PersonEducation">
+              <PropertyRef Name="EducationInstitutionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PositionHasManyDuties">
+          <End Role="EmploymentPosition" Type="Self.EmploymentPosition" Multiplicity="1" />
+          <End Role="PositionDuty" Type="Self.PositionDuty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmploymentPosition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PositionDuty">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ResumeIncludesOneOreMorePositions">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="EmploymentPosition" Type="Self.EmploymentPosition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="EmploymentPosition">
+              <PropertyRef Name="ResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LanguageSpoken_PersonResume">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="LanguageSpoken" Type="Self.LanguageSpoken" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="LanguageSpoken">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonAddress_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonAddress" Type="Self.PersonAddress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonAddress">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonReference_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonReference" Type="Self.PersonReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonReference">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonHasOneOrMorePhoneNumbers">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PhoneNumber" Type="Self.PhoneNumber" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PhoneNumber">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonHasOneOrMoreResumes">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonResume">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonMayHaveOneOrMoreEducationBackground">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="PersonEducation" Type="Self.PersonEducation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="PersonEducation">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonReference_PersonResume">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="PersonReference" Type="Self.PersonReference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="PersonReference">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills">
+          <End Role="PersonResume" Type="Self.PersonResume" Multiplicity="1" />
+          <End Role="SkillOrSpeciality" Type="Self.SkillOrSpeciality" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonResume">
+              <PropertyRef Name="PersonResumeId" />
+            </Principal>
+            <Dependent Role="SkillOrSpeciality">
+              <PropertyRef Name="PersonResumeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Hdwih_Model" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="Self.Address" />
+          <EntitySet Name="Awards" EntityType="Self.Award" />
+          <EntitySet Name="EducationInstitutions" EntityType="Self.EducationInstitution" />
+          <EntitySet Name="EmploymentPositions" EntityType="Self.EmploymentPosition" />
+          <EntitySet Name="JobPostings" EntityType="Self.JobPosting" />
+          <EntitySet Name="LanguageSpokens" EntityType="Self.LanguageSpoken" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="PersonAddresses" EntityType="Self.PersonAddress" />
+          <EntitySet Name="PersonEducations" EntityType="Self.PersonEducation" />
+          <EntitySet Name="PersonReferences" EntityType="Self.PersonReference" />
+          <EntitySet Name="PersonResumes" EntityType="Self.PersonResume" />
+          <EntitySet Name="PhoneNumbers" EntityType="Self.PhoneNumber" />
+          <EntitySet Name="PositionDuties" EntityType="Self.PositionDuty" />
+          <EntitySet Name="SkillOrSpecialities" EntityType="Self.SkillOrSpeciality" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FK_Address_EducationInstitution" Association="Self.FK_Address_EducationInstitution">
+            <End Role="EducationInstitution" EntitySet="EducationInstitutions" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonAddress_Address" Association="Self.FK_PersonAddress_Address">
+            <End Role="Address" EntitySet="Addresses" />
+            <End Role="PersonAddress" EntitySet="PersonAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition" Association="Self.PersonMayHaveReceivedOneOrMoreAwardsWhileInAPosition">
+            <End Role="EmploymentPosition" EntitySet="EmploymentPositions" />
+            <End Role="Award" EntitySet="Awards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonEducation_EducationInstitution" Association="Self.FK_PersonEducation_EducationInstitution">
+            <End Role="EducationInstitution" EntitySet="EducationInstitutions" />
+            <End Role="PersonEducation" EntitySet="PersonEducations" />
+          </AssociationSet>
+          <AssociationSet Name="PositionHasManyDuties" Association="Self.PositionHasManyDuties">
+            <End Role="EmploymentPosition" EntitySet="EmploymentPositions" />
+            <End Role="PositionDuty" EntitySet="PositionDuties" />
+          </AssociationSet>
+          <AssociationSet Name="ResumeIncludesOneOreMorePositions" Association="Self.ResumeIncludesOneOreMorePositions">
+            <End Role="PersonResume" EntitySet="PersonResumes" />
+            <End Role="EmploymentPosition" EntitySet="EmploymentPositions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LanguageSpoken_PersonResume" Association="Self.FK_LanguageSpoken_PersonResume">
+            <End Role="PersonResume" EntitySet="PersonResumes" />
+            <End Role="LanguageSpoken" EntitySet="LanguageSpokens" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonAddress_Person" Association="Self.FK_PersonAddress_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonAddress" EntitySet="PersonAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonReference_Person" Association="Self.FK_PersonReference_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonReference" EntitySet="PersonReferences" />
+          </AssociationSet>
+          <AssociationSet Name="PersonHasOneOrMorePhoneNumbers" Association="Self.PersonHasOneOrMorePhoneNumbers">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PhoneNumber" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="PersonHasOneOrMoreResumes" Association="Self.PersonHasOneOrMoreResumes">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonResume" EntitySet="PersonResumes" />
+          </AssociationSet>
+          <AssociationSet Name="PersonMayHaveOneOrMoreEducationBackground" Association="Self.PersonMayHaveOneOrMoreEducationBackground">
+            <End Role="PersonResume" EntitySet="PersonResumes" />
+            <End Role="PersonEducation" EntitySet="PersonEducations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonReference_PersonResume" Association="Self.FK_PersonReference_PersonResume">
+            <End Role="PersonResume" EntitySet="PersonResumes" />
+            <End Role="PersonReference" EntitySet="PersonReferences" />
+          </AssociationSet>
+          <AssociationSet Name="PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills" Association="Self.PersonResumeCanHaveOneOrMoreSpecialtiesOrSkills">
+            <End Role="PersonResume" EntitySet="PersonResumes" />
+            <End Role="SkillOrSpeciality" EntitySet="SkillOrSpecialities" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Hdwih_Jobs_ModelStoreContainer" CdmEntityContainer="Hdwih_Model">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="EducationInstituationId" ColumnName="EducationInstituationId" />
+                <ScalarProperty Name="AddressName" ColumnName="AddressName" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTimeStamp" ColumnName="LastUpdateTimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Awards">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.Award">
+              <MappingFragment StoreEntitySet="Award">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateReceived" ColumnName="DateReceived" />
+                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducationInstitutions">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.EducationInstitution">
+              <MappingFragment StoreEntitySet="EducationInstitution">
+                <ScalarProperty Name="EducationInstitutionId" ColumnName="EducationInstitutionId" />
+                <ScalarProperty Name="InstitutionName" ColumnName="InstitutionName" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmploymentPositions">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.EmploymentPosition">
+              <MappingFragment StoreEntitySet="EmploymentPosition">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ResumeId" ColumnName="ResumeId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="SupervisorPhone" ColumnName="SupervisorPhone" />
+                <ScalarProperty Name="SupervisorName" ColumnName="SupervisorName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="NumberOWeeklyHours" ColumnName="NumberOWeeklyHours" />
+                <ScalarProperty Name="IsVolunteerPosition" ColumnName="IsVolunteerPosition" />
+                <ScalarProperty Name="IsInPresentPosition" ColumnName="IsInPresentPosition" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobPostings">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.JobPosting">
+              <MappingFragment StoreEntitySet="JobPosting">
+                <ScalarProperty Name="JobPostingId" ColumnName="JobPostingId" />
+                <ScalarProperty Name="PostingDate" ColumnName="PostingDate" />
+                <ScalarProperty Name="PostingTitle" ColumnName="PostingTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LanguageSpokens">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.LanguageSpoken">
+              <MappingFragment StoreEntitySet="LanguageSpoken">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PersonResumeId" ColumnName="PersonResumeId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonAddresses">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.PersonAddress">
+              <MappingFragment StoreEntitySet="PersonAddress">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonEducations">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.PersonEducation">
+              <MappingFragment StoreEntitySet="PersonEducation">
+                <ScalarProperty Name="PersonResumeId" ColumnName="PersonResumeId" />
+                <ScalarProperty Name="EducationInstitutionId" ColumnName="EducationInstitutionId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonReferences">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.PersonReference">
+              <MappingFragment StoreEntitySet="PersonReference">
+                <ScalarProperty Name="PersonResumeId" ColumnName="PersonResumeId" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonResumes">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.PersonResume">
+              <MappingFragment StoreEntitySet="PersonResume">
+                <ScalarProperty Name="PersonResumeId" ColumnName="PersonResumeId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneNumbers">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.PhoneNumber">
+              <MappingFragment StoreEntitySet="PhoneNumber">
+                <ScalarProperty Name="PhoneNumberId" ColumnName="PhoneNumberId" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="PhoneType" ColumnName="PhoneType" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PositionDuties">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.PositionDuty">
+              <MappingFragment StoreEntitySet="PositionDuty">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+                <ScalarProperty Name="DutyDescrption" ColumnName="DutyDescrption" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SkillOrSpecialities">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.SkillOrSpeciality">
+              <MappingFragment StoreEntitySet="SkillOrSpeciality">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PersonResumeId" ColumnName="PersonResumeId" />
+                <ScalarProperty Name="SkillOrSpecialtyDescription" ColumnName="SkillOrSpecialtyDescription" />
+                <ScalarProperty Name="InsertDateTime" ColumnName="InsertDateTime" />
+                <ScalarProperty Name="LastUpdateTime" ColumnName="LastUpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Hdwih_Jobs_Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
