@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DomainCore.cd" />
+    <None Include="JobPostingDomain.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
