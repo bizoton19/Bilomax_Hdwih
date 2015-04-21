@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packages", "Packages", "{7A
 		..\packages\repositories.config = ..\packages\repositories.config
 	EndProjectSection
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HDWIH_Resume", "..\HDWIH_Resume\HDWIH_Resume.sqlproj", "{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,12 @@ Global
 		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C61D8AB2-750B-4F06-8DF5-8C50452453D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED96B8B6-B10B-4902-BD7F-9D0F4A686D23}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
