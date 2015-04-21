@@ -48,67 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Award.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EducationInstitution.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmploymentPosition.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HdwihModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HdwihModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HdwihModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HdwihModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HdwihModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="JobPosting.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LanguageSpoken.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonAddress.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonEducation.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonReference.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PersonResume.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PhoneNumber.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PositionDuty.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SkillOrSpeciality.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>HdwihModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -123,23 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="HdwihModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HdwihModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="HdwihModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HdwihModel.edmx</DependentUpon>
-      <LastGenOutput>HdwihModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="HdwihModel.edmx.diagram">
-      <DependentUpon>HdwihModel.edmx</DependentUpon>
-    </None>
-    <None Include="HdwihModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HdwihModel.edmx</DependentUpon>
-      <LastGenOutput>HdwihModel.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
