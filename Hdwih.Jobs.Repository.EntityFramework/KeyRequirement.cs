@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 namespace Hdwih.Jobs.Repository.EntityFramework
 {
     using System;
@@ -20,7 +18,6 @@ namespace Hdwih.Jobs.Repository.EntityFramework
         public string RequirementDescription { get; set; }
 
         [Column(TypeName = "datetime2")]
-        
         public DateTime InsertDateTime { get; set; }
 
         [Column(TypeName = "datetime2")]

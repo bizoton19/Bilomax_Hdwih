@@ -8,7 +8,7 @@ namespace Hdwih.Jobs.Repository.EntityFramework
     public partial class Hdwih_Entities : DbContext
     {
         public Hdwih_Entities()
-            : base("name=Hdwih_Entities")
+            : base("name=Hdwih_Data_Entities")
         {
         }
 
@@ -27,6 +27,7 @@ namespace Hdwih.Jobs.Repository.EntityFramework
         public virtual DbSet<PersonOrganization> PersonOrganizations { get; set; }
         public virtual DbSet<PersonReference> PersonReferences { get; set; }
         public virtual DbSet<PersonResume> PersonResumes { get; set; }
+        public virtual DbSet<PersonResumeType> PersonResumeTypes { get; set; }
         public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }
         public virtual DbSet<PositionDuty> PositionDuties { get; set; }
         public virtual DbSet<Qualification> Qualifications { get; set; }
@@ -258,8 +259,26 @@ namespace Hdwih.Jobs.Repository.EntityFramework
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PersonResume>()
+                .HasMany(e => e.Resumes)
+                .WithOptional(e => e.ParentResume)
+                .HasForeignKey(e => e.ParentResumeId);
+
+            modelBuilder.Entity<PersonResume>()
                 .HasMany(e => e.SkillOrSpecialities)
                 .WithRequired(e => e.PersonResume)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<PersonResumeType>()
+                .Property(e => e.ResumeTypeTitle)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PersonResumeType>()
+                .Property(e => e.ResumeTypeDescription)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PersonResumeType>()
+                .HasMany(e => e.PersonResumes)
+                .WithRequired(e => e.PersonResumeType)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PhoneNumber>()

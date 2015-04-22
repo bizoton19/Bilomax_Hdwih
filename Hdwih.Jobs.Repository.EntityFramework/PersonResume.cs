@@ -15,10 +15,13 @@ namespace Hdwih.Jobs.Repository.EntityFramework
             LanguageSpokens = new HashSet<LanguageSpoken>();
             PersonEducations = new HashSet<PersonEducation>();
             PersonReferences = new HashSet<PersonReference>();
+            PersonResume1 = new HashSet<PersonResume>();
             SkillOrSpecialities = new HashSet<SkillOrSpeciality>();
         }
 
         public long PersonResumeId { get; set; }
+
+        public long? ParentResumeId { get; set; }
 
         [StringLength(4000)]
         public string Introduction { get; set; }
@@ -28,6 +31,8 @@ namespace Hdwih.Jobs.Repository.EntityFramework
         public string Name { get; set; }
 
         public long PersonId { get; set; }
+
+        public short ResumeTypeId { get; set; }
 
         [Column(TypeName = "datetime2")]
         public DateTime InsertDateTime { get; set; }
@@ -44,6 +49,12 @@ namespace Hdwih.Jobs.Repository.EntityFramework
         public virtual ICollection<PersonEducation> PersonEducations { get; set; }
 
         public virtual ICollection<PersonReference> PersonReferences { get; set; }
+
+        public virtual ICollection<PersonResume> Resumes { get; set; }
+
+        public virtual PersonResume ParentResume { get; set; }
+
+        public virtual PersonResumeType PersonResumeType { get; set; }
 
         public virtual ICollection<SkillOrSpeciality> SkillOrSpecialities { get; set; }
     }

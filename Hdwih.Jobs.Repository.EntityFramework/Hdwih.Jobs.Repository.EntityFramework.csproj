@@ -64,6 +64,7 @@
     <Compile Include="PersonOrganization.cs" />
     <Compile Include="PersonReference.cs" />
     <Compile Include="PersonResume.cs" />
+    <Compile Include="PersonResumeType.cs" />
     <Compile Include="PhoneNumber.cs" />
     <Compile Include="PositionDuty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
