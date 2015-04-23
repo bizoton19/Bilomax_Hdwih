@@ -8,10 +8,10 @@ namespace Hdwih.Jobs.Domain.Core
 {
    public class PhoneNumber: EntityBase<int>
     {
-        public int PhoneNumberId { get; set; }
-        public int? CountryCode { get; set; }
-        public int? AreaCode { get; set; }
-        public int? Number { get; set; }
+        
+        public virtual int? CountryCode { get; set; }
+        public virtual int? AreaCode { get; set; }
+        public virtual int? Number { get; set; }
         public PhoneType PhoneType { get; set; }
        //TODO: implement extension method
 

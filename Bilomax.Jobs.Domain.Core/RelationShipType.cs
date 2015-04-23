@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Hdwih.Jobs.Domain.Core
 {
-    public enum RelationShipType
+    public enum RelationshipType
     {
         FamilyMember,
         Friend,

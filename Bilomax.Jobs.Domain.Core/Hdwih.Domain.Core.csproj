@@ -64,31 +64,36 @@
     <Compile Include="AccountType.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="AddressType.cs" />
-    <Compile Include="JobPosting.cs" />
+    <Compile Include="IPersonAttribute.cs" />
+    <Compile Include="JobPostings\IPostingAttribute.cs" />
+    <Compile Include="JobPostings\JobPosting.cs" />
+    <Compile Include="JobPostings\JobPostingTitle.cs" />
+    <Compile Include="JobPostings\JobPostingNote.cs" />
+    <Compile Include="JobPostings\KeyRequirement.cs" />
+    <Compile Include="JobPostings\Qualification.cs" />
     <Compile Include="Organization.cs" />
-    <Compile Include="PostingDetails.cs" />
-    <Compile Include="RequiredDocument.cs" />
+    <Compile Include="JobPostings\RequiredDocument.cs" />
     <Compile Include="Resume\Award.cs" />
     <Compile Include="Resume\EducationInstitutation.cs" />
     <Compile Include="Resume\EducationLevel.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="GenericUser.cs" />
     <Compile Include="Resume\IResumeAttribute.cs" />
-    <Compile Include="Language.cs" />
+    <Compile Include="Resume\LanguageSpoken.cs" />
     <Compile Include="MailingAddress.cs" />
-    <Compile Include="MobilePhone.cs" />
     <Compile Include="OrganizationContact.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Resume\PersonEducation.cs" />
     <Compile Include="Resume\PersonResume.cs" />
-    <Compile Include="Resume\PhoneNumber.cs" />
+    <Compile Include="Resume\PersonResumeType.cs" />
+    <Compile Include="PhoneNumber.cs" />
     <Compile Include="PhoneType.cs" />
     <Compile Include="Resume\PositionDuty.cs" />
     <Compile Include="Resume\EmploymentPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resume\Reference.cs" />
-    <Compile Include="RelationShipType.cs" />
+    <Compile Include="RelationshipType.cs" />
     <Compile Include="HdwihRecruit.cs" />
     <Compile Include="RepositoryInterfaces\IPersonRepository.cs" />
     <Compile Include="RepositoryInterfaces\IPersonResumeRepository.cs" />
@@ -99,9 +104,7 @@
     <None Include="JobPostingDomain.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Bilomax.Jobs.Infrastructure\Bilomax.Generic.Infrastructure.csproj">
       <Project>{5a9ad473-5d70-4958-a00c-0fd7ed6e2903}</Project>

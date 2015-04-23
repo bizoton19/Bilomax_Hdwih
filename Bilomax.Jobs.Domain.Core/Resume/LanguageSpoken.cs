@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hdwih.Jobs.Domain.Core
+namespace Hdwih.Jobs.Domain.Core.Resume
 {
-   public class Language: EntityBase<int>, IResumeAttribute
+   public class LanguageSpoken: EntityBase<int>, IResumeAttribute
     {
-        public int LanguageId { get; set; }
+       
         public string  Name { get; set; }
 
        protected override void Validate()

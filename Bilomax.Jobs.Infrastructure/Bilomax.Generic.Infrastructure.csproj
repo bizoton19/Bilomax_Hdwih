@@ -60,7 +60,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="StructureMap">
-      <HintPath>..\Lib\StructureMap.dll</HintPath>
+      <HintPath>..\..\localhost_63501\Lib\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

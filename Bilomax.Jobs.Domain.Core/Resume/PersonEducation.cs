@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hdwih.Jobs.Domain.Core
+namespace Hdwih.Jobs.Domain.Core.Resume
 {
    public class PersonEducation: EntityBase<int>, IResumeAttribute
    {

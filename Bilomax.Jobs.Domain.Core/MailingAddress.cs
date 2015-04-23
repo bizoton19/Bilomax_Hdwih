@@ -7,6 +7,6 @@ namespace Hdwih.Jobs.Domain.Core
 {
     public class MailingAddress: Address
     {
-        public string Name { get; set; }
+        
     }
 }

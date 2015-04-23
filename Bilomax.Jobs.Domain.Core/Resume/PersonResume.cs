@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bilomax.Generic.Infrastructure.Domain;
+using Hdwih.Jobs.Domain.Core.RepositoryInterfaces;
 
-namespace Hdwih.Jobs.Domain.Core
+namespace Hdwih.Jobs.Domain.Core.Resume
 {
     /// <summary>
     /// This class represents a person's resumeas an object that contains an PositionDutyId, a Title, a list of previous and current positions
@@ -13,20 +14,21 @@ namespace Hdwih.Jobs.Domain.Core
     /// </summary>
    public class PersonResume: EntityBase<int>,IAggregateRoot
     {
+        public PersonResume(IPersonResumeRepository personResumeData, IPersonRepository personData )
+        {  
+            _personResumeData = personResumeData;
+
+            
+        }
        // public int PositionDutyId { get; set; }
         
+        private IPersonResumeRepository _personResumeData;
         public string ResumeName { get; set; }
-        public HdwihRecruit HdwihRecruit { get; set; }
-        public Gender Gender { get { return this.HdwihRecruit.Gender; } }
+        public HdwihRecruit ResumeOwner { get; set; }
+        public Gender Gender { get { return this.ResumeOwner.Gender; } }
         public string[] SkillsOrSpecialties { get; set; }
-        public string FirstName { get { return this.HdwihRecruit.FirstName; } }
-        public string MiddleName { get { return this.HdwihRecruit.MiddleName; } }
-        public string LastName { get { return this.HdwihRecruit.LastName; } }
-        public string EmailAddress { get {return this.HdwihRecruit.EmailAddress;}}
-        public IEnumerable<Address> PersonAddresses { get { return this.HdwihRecruit.CurrentAddresses; } }
-        public IEnumerable<PhoneNumber> PersonPhoneNumbers { get { return this.HdwihRecruit.CurrentPhoneNumbers; } }
         public IEnumerable<EmploymentPosition> EmploymentHistory { get; set; }
-        public IEnumerable<Language> LanguagesSpoken { get; set; }
+        public IEnumerable<LanguageSpoken> LanguagesSpoken { get; set; }
         public IEnumerable<Reference> References { get; set; }
         public IEnumerable<PersonEducation> EducationHistory { get; set; }
         
@@ -34,5 +36,26 @@ namespace Hdwih.Jobs.Domain.Core
         {
             throw new NotImplementedException();
         }
+
+        public Person GetOwner()
+        {
+             var owner = _personResumeData.GetOwner(this.Id);
+            return ResumeOwner;
+        }
+       public void ConvertToFormat()
+        { }
+       public void Edit()
+       { }
+       public void Delete()
+       { }
+
+        public void Create()
+        {
+        }
+       public void ForwardToHdwihUser()
+        { }
+       public void ForwardToEmailList(string[] emaiList) { }
+       public void Download()
+       { }
     }
 }

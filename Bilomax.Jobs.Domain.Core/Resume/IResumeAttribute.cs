@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hdwih.Jobs.Domain.Core
+namespace Hdwih.Jobs.Domain.Core.Resume
 {
     public interface IResumeAttribute
     {
-         int id { get; set; }
+         int Id { get; set; }
          string Name { get;set;}
     }
 }

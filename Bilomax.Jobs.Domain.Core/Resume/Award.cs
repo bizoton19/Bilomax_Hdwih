@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hdwih.Jobs.Domain.Core
+namespace Hdwih.Jobs.Domain.Core.Resume
 {
-   public class Award: EntityBase<int>
+   public class Award: EntityBase<int>, IResumeAttribute
     {
-        public int AwardId { get; set; }
-        public string Title { get; set; }
+        
+        public string Name { get; set; }
         public string Description { get; set; }
         public DateTime ReceivedDate { get; set; }
         protected override void Validate()

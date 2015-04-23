@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Bilomax.Generic.Infrastructure.Domain;
+using Hdwih.Jobs.Domain.Core.JobPostings;
 
 namespace Hdwih.Jobs.Domain.Core
 {

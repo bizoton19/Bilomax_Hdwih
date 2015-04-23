@@ -15,11 +15,7 @@ namespace Hdwih.Jobs.Domain.Core
         public AccountType AccountType { get; set; }
        // public DateTime OpenDate { get; set; }
         public DateTime ClosedDate { get; set; }
-        public bool IsAccountStillActive() 
-        {
-           return _isAccountStillActive = ClosedDate == null ? true : false;
-
-        }
+        
         public int GetNumberOfResumesAllowed()
         {
             if(this.AccountType.Equals(AccountType.Free))
@@ -36,6 +32,22 @@ namespace Hdwih.Jobs.Domain.Core
             }
 
             return _numberOfResumesAllowed;
+        }
+
+        public void SignOut()
+        {
+
+        }
+
+        public void SignIn()
+        {
+
+        }
+
+
+        public void DeleteAccount()
+        {
+
         }
         
     }

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Hdwih.Jobs.Domain.Core
+namespace Hdwih.Jobs.Domain.Core.Resume
 {
-  public  class PositionDuty: EntityBase<int>
+  public  class PositionDuty: EntityBase<int>, IResumeAttribute
     {
-        public string PositionDutyId { get; set; }
+       public string Name { get; set; }
         public string DutyDescription { get; set; }
 
 
