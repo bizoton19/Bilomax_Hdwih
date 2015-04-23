@@ -10,6 +10,7 @@ namespace Hdwih.Jobs.Domain.Core.JobPostings
         {
         }
         public string Name { get; set; }
+        public JobPosting JobPosting { get; set; }
         public DateTime PostingDate { get; set; }
         public string ClosingDate { get; set; }
         public long? OrganizationId { get; set; }
